@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewtiful - Кофе</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "main.css">
+    <link rel="stylesheet" href="category.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+            <div class="brand-name">Brewtiful</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li>
+                        <a class="catalog-dropdown-btn">Каталог </a>
+                        <div class="dropdown-menu">
+                             <a href="coffee.html">☕ Кофе</a>
+                            <a href="tea.html">🍵 Чай</a>
+                            <a href="desserts.html">🍰 Десерты</a>
+                        </div>
+                    </li>
+                    <li><a href="aboutus.html">О нас</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="favorites.html" class="favorites-btn">🤎</a>
+            </div>
+        </div>
+        </div>
+    </header>
+
+
+    <main class="category-page">
+        <div class="container">
+            <div class="category-header">
+                <h1 class="category-title">Кофе</h1>
+                <p class="category-description">Насладитесь ароматом свежеобжаренного кофе из отборных зерен. Каждая чашка - это настоящее искусство.</p>
+            </div>
+
+<div class="search-section">
+    <div class="search-container">
+        <div class="search-wrapper">
+            <input type="text" 
+                   class="search-input" 
+                   id="searchInput" 
+                   placeholder="Поиск..." 
+                   autocomplete="off">
+            <button class="search-button" id="searchButton">
+                <span class="search-icon">🔍</span>
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
+            <div class="filters-section">
+                <button class="filters-toggle">Фильтры</button>
+    <div class="filters-content">
+        <div class="filter-group">
+            <p class="filter-title">Цена</p>
+            <div class="price-range">
+                <div class="dual-range-slider">
+                    <div class="slider-track"></div>
+                    <input type="range" min="0" max="1000" value="0" class="range-slider range-min" id="minSlider">
+                    <input type="range" min="0" max="1000" value="500" class="range-slider range-max" id="maxSlider">
+                </div>
+                <div class="price-values">
+                    <span class="min-value">0₽</span>
+                    <span class="max-value">500₽</span>
+                </div>
+            </div>
+        </div>
+                    
+                    <div class="filter-group">
+                        <p class="filter-title">Оценка</p>
+                        <div class="rating-filter">
+                            <label class="rating-option">
+                                <input type="checkbox" name="rating" value="5">
+                                <span class="rating-stars">★★★★★</span> 5 звезд
+                            </label>
+                            <label class="rating-option">
+                                <input type="checkbox" name="rating" value="4">
+                                <span class="rating-stars">★★★★☆</span> 4+ звезды
+                            </label>
+                            <label class="rating-option">
+                                <input type="checkbox" name="rating" value="3">
+                                <span class="rating-stars">★★★☆☆</span> 3+ звезды
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <p class="filter-title">Размер</p>
+                        <div class="size-filter">
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="s">
+                                <span class="size-badge">S</span> Маленький
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="m">
+                                <span class="size-badge">M</span> Средний
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="l">
+                                <span class="size-badge">L</span> Большой
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="apply-filters">Применить</button>
+                        <button class="reset-filters">Сбросить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+    <div class="product-item" data-price="250" data-rating="5" data-size="medium">
+        <div class="product-card" style="background: url('9.jpg') no-repeat center center; background-size: cover;">
+            
+        </div>
+        <div class="product-info">
+            <p class="product-name">Американо</p>
+            <p class="product-description">Классический черный кофе с насыщенным вкусом и ароматом</p>
+            <p class="product-price">250₽</p>
+        </div>
+    </div>
+    
+    <div class="product-item" data-price="350" data-rating="4" data-size="large">
+        <div class="product-card" style="background: url('12.jpg') no-repeat center center; background-size: cover;">
+            
+        </div>
+        <div class="product-info">
+            <p class="product-name">Раф</p>
+            <p class="product-description">Нежный кофе со сливочными нотками и ванильным сиропом</p>
+            <p class="product-price">350₽</p>
+        </div>
+    </div>
+    
+    <div class="product-item" data-price="290" data-rating="4" data-size="medium">
+        <div class="product-card" style="background: url('8.jpg') no-repeat center center; background-size: cover;">
+            
+        </div>
+        <div class="product-info">
+            <a href="prodcof.html" class="product-name-link">
+                <p class="product-name">Капучино</p>
+            </a>
+            <p class="product-description">Классика с равными пропорциями кофе, молока и пенки</p>
+            <p class="product-price">290₽</p>
+        </div>
+    </div>
+</div>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="back-button">← Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Brewtiful. Все права защищены.</p>
+        </div>
+    </footer>
+
+   <script src="app.js"></script>
+
+   <div class="product-tooltip" id="productTooltip">
+    <div class="tooltip-content">
+        <div class="tooltip-header">
+            <span class="tooltip-name" id="tooltipName"></span>
+            <span class="tooltip-rating" id="tooltipRating">
+                <span class="stars-container"></span>
+                <span class="rating-number"></span>
+            </span>
+        </div>
+        <div class="tooltip-sizes" id="tooltipSizes">
+            <span class="tooltip-label">Размеры:</span>
+            <div class="sizes-container"></div>
+        </div>
+        <div class="tooltip-ingredients" id="tooltipIngredients">
+            <span class="tooltip-label">Ингредиенты:</span>
+            <ul class="ingredients-list"></ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

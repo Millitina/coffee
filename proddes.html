@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тирамису - Brewtiful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand-name">Brewtiful</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li>
+                            <a class="catalog-dropdown-btn">Каталог </a>
+                            <div class="dropdown-menu">
+                                <a href="coffee.html">☕ Кофе</a>
+                                <a href="tea.html">🍵 Чай</a>
+                                <a href="desserts.html">🍰 Десерты</a>
+                            </div>
+                        </li>
+                        <li><a href="aboutus.html">О нас</a></li>
+                        <li><a href="index.html#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                <a href="favorites.html" class="favorites-btn">🤎</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-page">
+        <div class="container">
+            <div class="product-layout">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="10.jpg" alt="Тирамису" id="mainProductImage">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">Тирамису</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="rating-value">4.9</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">350 ₽</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>Классический итальянский десерт с кофейным вкусом. Нежное сочетание маскарпоне, савоярди и ароматного кофе.</p>
+                    </div>
+
+                    <div class="product-ingredients">
+                        <h2>Состав:</h2>
+                        <ul>
+                            <li>Сыр маскарпоне</li>
+                            <li>Печенье савоярди</li>
+                            <li>Кофе эспрессо</li>
+                            <li>Куриные яйца</li>
+                            <li>Сахар</li>
+                            <li>Какао-порошок</li>
+                        </ul>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-favorites-btn" id="addToFavorites">
+                            <span class="favorite-icon">♡</span>
+                            <span class="favorite-text">В избранное</span>
+                        </button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature">
+                            <span class="feature-icon">⭐</span>
+                            <span class="feature-text">Премиум-ингредиенты</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌱</span>
+                            <span class="feature-text">Без консервантов</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-details">
+                <div class="details-tabs">
+                    <button class="tab-btn active" data-tab="description">Описание</button>
+                    <button class="tab-btn" data-tab="nutrition">Пищевая ценность</button>
+                    <button class="tab-btn" data-tab="reviews">Отзывы</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="description">
+                        <h3>О тирамису</h3>
+                        <p>Тирамису - один из самых известных и любимых итальянских десертов во всем мире. В переводе с итальянского его название означает "взбодри меня" - и это полностью отражает его вкус!</p>
+                        <p>Наш тирамису готовится по традиционному рецепту с использованием настоящего итальянского сыра маскарпоне и пропитывается свежесваренным эспрессо. Каждый слой этого десерта пропитан любовью к классической итальянской кухне.</p>
+                        <p>Мы используем только свежие фермерские яйца и качественный какао-порошок для посыпки, что делает наш тирамису по-настоящему аутентичным.</p>
+                    </div>
+
+                    <div class="tab-pane" id="nutrition">
+                        <h3>Пищевая ценность на 100 г</h3>
+                        <table class="nutrition-table">
+                            <tr>
+                                <td>Энергетическая ценность</td>
+                                <td>320 ккал</td>
+                            </tr>
+                            <tr>
+                                <td>Белки</td>
+                                <td>6.2 г</td>
+                            </tr>
+                            <tr>
+                                <td>Жиры</td>
+                                <td>24.8 г</td>
+                            </tr>
+                            <tr>
+                                <td>Углеводы</td>
+                                <td>18.5 г</td>
+                            </tr>
+                            <tr>
+                                <td>Сахар</td>
+                                <td>15.3 г</td>
+                            </tr>
+                        </table>
+                        <div class="allergens-info">
+                            <h4>Аллергены:</h4>
+                            <p>Содержит: молоко, яйца, глютен. Может содержать следы орехов.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="reviews">
+                        <h3>Отзывы покупателей</h3>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="review-author">Мария</span>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Настоящий итальянский тирамису! Очень нежный, с идеальным балансом кофе и сладости. Заказываю регулярно!</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="review-author">Александр</span>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Очень вкусно, но хотелось бы чуть больше кофейной пропитки. В целом - отличный десерт!</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="review-author">Елена</span>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Лучший тирамису, который я пробовала в нашем городе! Напоминает тот, что ела в Италии. Обязательно буду заказывать еще!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-products">
+                <p class="section-title">Вам также может понравиться</p>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">🍰</div>
+                        <h3 class="product-name">Чизкейк Нью-Йорк</h3>
+                        <p class="product-description">Классический чизкейк с нежной текстурой</p>
+                        <p class="product-price">320₽</p>
+                        <a href="product-cheesecake.html" class="product-link">Подробнее</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🍫</div>
+                        <h3 class="product-name">Шоколадный фондан</h3>
+                        <p class="product-description">Тёплый шоколадный кекс с жидкой сердцевиной</p>
+                        <p class="product-price">280₽</p>
+                        <a href="product-fondant.html" class="product-link">Подробнее</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🥧</div>
+                        <h3 class="product-name">Яблочный пирог</h3>
+                        <p class="product-description">Домашний пирог с корицей и яблоками</p>
+                        <p class="product-price">240₽</p>
+                        <a href="product-apple-pie.html" class="product-link">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="desserts.html" class="back-button">← Вернуться к каталогу десертов</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Brewtiful. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="prod2.js"></script>
+</body>
+</html>

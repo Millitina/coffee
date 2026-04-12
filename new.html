@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewtiful - Добавление товара</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5D4037 0%, #3E2723 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .admin-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .admin-header {
+            background: #F0D8B8;
+            color: #3E2723;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .admin-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .admin-header p {
+            opacity: 0.8;
+            font-size: 1.1em;
+        }
+
+        .admin-form {
+            padding: 40px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #3E2723;
+            font-size: 1.1em;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3E2723;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .size-checkbox {
+            display: none;
+        }
+
+        .size-label {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .size-checkbox:checked + .size-label {
+            background: #3E2723;
+            color: white;
+            border-color: #5D4037;
+        }
+
+        .image-upload {
+            border: 2px dashed #e1e8ed;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .image-upload:hover {
+            border-color: #3498db;
+        }
+
+        .image-upload i {
+            font-size: 3em;
+            color: #bdc3c7;
+            margin-bottom: 10px;
+        }
+
+        .image-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .preview-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .remove-image {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #5D4037, #3E2723);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .form-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .category-fields {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e1e8ed;
+        }
+
+        .category-fields.active {
+            display: block;
+        }
+
+        .nutrition-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+ .form-group {
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.hint {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+    display: block;
+    height: 18px;
+    line-height: 18px;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    color: #e74c3c;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: none;
+    height: 18px;
+    line-height: 18px;
+}
+
+.size-options {
+    margin-bottom: 10px;
+}
+
+        .form-control.error {
+            border-color: #e74c3c;
+        }
+
+        .form-control.valid {
+            border-color: #2ecc71;
+        }
+
+        .size-options.error .size-label {
+            border-color: #e74c3c;
+        }
+
+        .image-upload.error {
+            border-color: #e74c3c;
+        }
+
+        .category-field-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .category-field-group .error-message {
+            height: 18px;
+            line-height: 18px;
+        }
+
+        .benefit-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .benefit-select:focus {
+            outline: none;
+            border-color: #3E2723;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .benefit-select.error {
+            border-color: #e74c3c;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+input[type="email"] {
+    font-family: inherit;
+}
+
+
+#productArticle {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#productArticle.valid {
+    background-color: #f8fff8;
+    border-color: #2ecc71;
+}
+
+#productArticle.error {
+    background-color: #fff8f8;
+    border-color: #e74c3c;
+}
+
+input[type="date"] {
+    font-family: inherit;
+    padding: 12px 15px;
+}
+
+input[type="date"].valid {
+    background-color: #f8fff8;
+    border-color: #2ecc71;
+}
+
+input[type="date"].error {
+    background-color: #fff8f8;
+    border-color: #e74c3c;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background-color: #f0f0f0;
+}
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Добавление товара</h1>
+            <p>Панель администратора для пополнения каталога</p>
+        </div>
+
+        <form class="admin-form" id="productForm">
+            <div class="form-section">
+                <h3>Основная информация</h3>
+                <div class="form-group">
+                    <label for="productName">Название товара</label>
+                    <input type="text" id="productName" class="form-control" required>
+                    <span class="hint">Только русские буквы и дефисы, от 3 до 20 символов</span>
+                    <span class="error-message" id="productNameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Полное описание товара</label>
+                    <textarea id="productDescription" class="form-control" required></textarea>
+                    <span class="hint">Только русские буквы, дефисы, точки и запятые, от 20 до 1000 символов</span>
+                    <span class="error-message" id="productDescriptionError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="productCategory">Категория</label>
+                    <select id="productCategory" class="form-control" required>
+                        <option value="coffee">Кофе</option>
+                        <option value="tea">Чай</option>
+                        <option value="desserts">Десерты</option>
+                    </select>
+                    <span class="hint">Выберите одну из категорий</span>
+                    <span class="error-message" id="productCategoryError"></span>
+                </div>
+
+                <div id="coffeeFields" class="category-fields">
+                    <h4>Пищевая ценность кофе (на 100 мл)</h4>
+                    <div class="category-field-group">
+                        <div class="nutrition-row">
+                            <div class="form-group">
+                                <label for="coffeeEnergy">Энергетическая ценность (ккал)</label>
+                                <input type="number" id="coffeeEnergy" class="form-control" min="0" max="1000" step="1">
+                                <span class="hint">Целое число от 10 до 1000</span>
+                                <span class="error-message" id="coffeeEnergyError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="coffeeProteins">Белки (г)</label>
+                                <input type="number" id="coffeeProteins" class="form-control" min="0" max="100" step="0.1">
+                                <span class="hint">Число от 1 до 100</span>
+                                <span class="error-message" id="coffeeProteinsError"></span>
+                            </div>
+                        </div>
+                        <div class="nutrition-row">
+                            <div class="form-group">
+                                <label for="coffeeFats">Жиры (г)</label>
+                                <input type="number" id="coffeeFats" class="form-control" min="0" max="100" step="0.1">
+                                <span class="hint">Число от 1 до 100</span>
+                                <span class="error-message" id="coffeeFatsError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="coffeeCarbs">Углеводы (г)</label>
+                                <input type="number" id="coffeeCarbs" class="form-control" min="0" max="100" step="0.1">
+                                <span class="hint">Число от 1 до 100</span>
+                                <span class="error-message" id="coffeeCarbsError"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="teaFields" class="category-fields">
+                    <h4>Польза</h4>
+                    <div class="category-field-group">
+                        <div class="benefit-row">
+                            <div class="form-group">
+                                <label for="teaAntioxidants">Антиоксиданты</label>
+                                <select id="teaAntioxidants" class="benefit-select">
+                                    <option value="Низкое содержание">Низкое содержание</option>
+                                    <option value="Среднее содержание">Среднее содержание</option>
+                                    <option value="Высокое содержание">Высокое содержание</option>
+                                    <option value="Очень высокое содержание">Очень высокое содержание</option>
+                                </select>
+                                <span class="hint">Выберите уровень содержания антиоксидантов</span>
+                                <span class="error-message" id="teaAntioxidantsError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="teaVitamins">Витамины</label>
+                                <select id="teaVitamins" class="benefit-select">
+                                    <option value="C, B2">C, B2</option>
+                                    <option value="C, B2, E">C, B2, E</option>
+                                    <option value="C, B2, E, бета-каротин">C, B2, E, P</option>
+                                    <option value="C, B1, B2, E">C, B1, B2, E</option>
+                                </select>
+                                <span class="hint">Выберите основные витамины</span>
+                                <span class="error-message" id="teaVitaminsError"></span>
+                            </div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="form-group">
+                                <label for="teaMinerals">Минералы</label>
+                                <select id="teaMinerals" class="benefit-select">
+                                    <option value="Кальций, магний">Кальций, магний</option>
+                                    <option value="Кальций, магний, железо">Кальций, магний, железо</option>
+                                    <option value="Кальций, магний, калий">Кальций, магний, калий</option>
+                                    <option value="Кальций, магний, железо, цинк">Кальций, магний, железо, цинк</option>
+                                </select>
+                                <span class="hint">Выберите основные минералы</span>
+                                <span class="error-message" id="teaMineralsError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="teaCaffeine">Кофеин</label>
+                                <select id="teaCaffeine" class="benefit-select">
+                                    <option value="Без кофеина">Без кофеина</option>
+                                    <option value="Низкое содержание">Низкое содержание</option>
+                                    <option value="Умеренное количество">Умеренное количество</option>
+                                    <option value="Высокое содержание">Высокое содержание</option>
+                                </select>
+                                <span class="hint">Выберите уровень содержания кофеина</span>
+                                <span class="error-message" id="teaCaffeineError"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dessertsFields" class="category-fields">
+                    <h4>Пищевая ценность десерта (на 100 г)</h4>
+                    <div class="category-field-group">
+                        <div class="nutrition-row">
+                            <div class="form-group">
+                                <label for="dessertEnergy">Энергетическая ценность (ккал)</label>
+                                <input type="number" id="dessertEnergy" class="form-control" min="0" max="1000" step="1">
+                                <span class="hint">Целое число от 10 до 1000</span>
+                                <span class="error-message" id="dessertEnergyError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dessertProteins">Белки (г)</label>
+                                <input type="number" id="dessertProteins" class="form-control" min="0" max="100" step="0.1">
+                                <span class="hint">Число от 1 до 100</span>
+                                <span class="error-message" id="dessertProteinsError"></span>
+                            </div>
+                        </div>
+                        <div class="nutrition-row">
+                            <div class="form-group">
+                                <label for="dessertFats">Жиры (г)</label>
+                                <input type="number" id="dessertFats" class="form-control" min="0" max="100" step="0.1">
+                                <span class="hint">Число от 1 до 100</span>
+                                <span class="error-message" id="dessertFatsError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dessertCarbs">Углеводы (г)</label>
+                                <input type="number" id="dessertCarbs" class="form-control" min="0" max="100" step="0.1">
+                                <span class="hint">Число от 1 до 100</span>
+                                <span class="error-message" id="dessertCarbsError"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="category-field-group">
+                        <div class="form-group">
+                            <label for="dessertAllergens">Аллергены</label>
+                            <input type="text" id="dessertAllergens" class="form-control">
+                            <span class="hint">Только русские буквы, пробелы, запятые и дефисы</span>
+                            <span class="error-message" id="dessertAllergensError"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Цены и размеры</h3>
+                <div class="form-group">
+                    <label>Доступные размеры</label>
+                    <div class="size-options" id="sizeOptions">
+                        <div class="size-option">
+                            <input type="checkbox" id="sizeS" class="size-checkbox" value="S" data-price="150">
+                            <label for="sizeS" class="size-label">S</label>
+                        </div>
+                        <div class="size-option">
+                            <input type="checkbox" id="sizeM" class="size-checkbox" value="M" data-price="200">
+                            <label for="sizeM" class="size-label">M</label>
+                        </div>
+                        <div class="size-option">
+                            <input type="checkbox" id="sizeL" class="size-checkbox" value="L" data-price="250">
+                            <label for="sizeL" class="size-label">L</label>
+                        </div>
+                    </div>
+                    <span class="hint">Выберите хотя бы один размер товара</span>
+                    <span class="error-message" id="sizesError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="basePrice">Базовая цена (₽)</label>
+                    <input type="number" id="basePrice" class="form-control" required min="200" max="2500">
+                    <span class="hint">Целое число от 200 до 2500 рублей</span>
+                    <span class="error-message" id="basePriceError"></span>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Изображения товара</h3>
+                <div class="form-group">
+                    <label>Загрузка изображений *</label>
+                    <div class="image-upload" id="imageUpload">
+                        <div>📁</div>
+                        <p>Перетащите сюда изображения или кликните для выбора</p>
+                        <input type="file" id="fileInput" multiple accept="image/jpeg,image/png" style="display: none;">
+                    </div>
+                    <div class="image-preview" id="imagePreview"></div>
+                    <span class="hint">Загрузите изображение в формате JPG или PNG</span>
+                    <span class="error-message" id="imagesError"></span>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Дополнительная информация</h3>
+                <div class="form-group">
+                    <label for="ingredients">Ингредиенты</label>
+                    <textarea id="ingredients" class="form-control"></textarea>
+                    <span class="hint">Только русские буквы, пробелы, запятые и дефисы</span>
+                    <span class="error-message" id="ingredientsError"></span>
+                </div>
+</div>
+
+<div class="form-group">
+    <label for="productDate">Дата добавления в каталог</label>
+    <input type="date" id="productDate" class="form-control" required>
+    <span class="hint">Дата не может быть меньше текущей</span>
+    <span class="error-message" id="productDateError"></span>
+</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Добавить товар в каталог</button>
+        </form>
+    </div>
+    <script src="new.js"></script>
+</body>
+</html>

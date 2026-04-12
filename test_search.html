@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест поиска</title>
+    <style>
+        .search-container { position: relative; width: 300px; margin: 20px; }
+        .search-input { width: 100%; padding: 8px; }
+        .search-results { position: absolute; background: white; border: 1px solid #ccc; width: 100%; display: none; }
+        .search-results.active { display: block; }
+        .search-result-item { padding: 8px; cursor: pointer; }
+        .search-result-item:hover { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h2>Тест поиска</h2>
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Введите текст...">
+        <button id="searchButton">Поиск</button>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000/api';
+        
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            console.log('Ввод:', e.target.value);
+            const results = document.getElementById('searchResults');
+            results.innerHTML = '<div class="search-result-item">Тест 1</div><div class="search-result-item">Тест 2</div>';
+            results.classList.add('active');
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            alert('Поиск: ' + document.getElementById('searchInput').value);
+        });
+    </script>
+</body>
+</html>

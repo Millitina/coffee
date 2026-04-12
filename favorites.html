@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное - Brewtiful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="favorites.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand-name">Brewtiful</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li>
+                            <a class="catalog-dropdown-btn">Каталог </a>
+                            <div class="dropdown-menu">
+                                <a href="coffee.html">☕ Кофе</a>
+                                <a href="tea.html">🍵 Чай</a>
+                                <a href="desserts.html">🍰 Десерты</a>
+                            </div>
+                        </li>
+                        <li><a href="aboutus.html">О нас</a></li>
+                        <li><a href="index.html#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="favorites.html" class="favorites-btn">🤎</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="category-page">
+        <div class="container">
+            <div class="category-header">
+                <h1 class="category-title">Избранное</h1>
+                <p class="category-description">Ваши любимые товары собраны здесь для быстрого доступа</p>
+            </div>
+
+            <div class="products-grid" id="favorites-container">
+                <div class="empty-favorites" style="text-align: center; padding: 50px; color: #5D4037;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">🤎</div>
+                    <p>В избранном пока ничего нет</p>
+                    <p>Добавляйте товары в избранное, нажимая на сердечко 🤎</p>
+                    <a href="coffee.html" class="back-button" style="margin-top: 20px;">Перейти в каталог</a>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="back-button">← Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Brewtiful. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="favorites.js"></script>
+</body>
+</html>

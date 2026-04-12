@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewtiful - Чай</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "main.css">
+    <link rel="stylesheet" href="category.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+            <div class="brand-name">Brewtiful</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li>
+                        <a class="catalog-dropdown-btn">Каталог </a>
+                        <div class="dropdown-menu">
+                             <a href="coffee.html">☕ Кофе</a>
+                            <a href="tea.html">🍵 Чай</a>
+                            <a href="desserts.html">🍰 Десерты</a>
+                        </div>
+                    </li>
+                    <li><a href="aboutus.html">О нас</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="favorites.html" class="favorites-btn">🤎</a>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <main class="category-page">
+        <div class="container">
+            <div class="category-header">
+                <h1 class="category-title">Чай</h1>
+                <p class="category-description">Ароматные чайные композиции со всего мира для настоящих ценителей. От классических сортов до авторских смесей.</p>
+            </div>
+            <div class="filters-section">
+                <button class="filters-toggle">Фильтры ▼</button>
+                <div class="filters-content">
+                    <div class="filter-group">
+                        <p class="filter-title">Цена</p>
+                        <div class="price-range">
+                            <span>0₽</span>
+                            <input type="range" min="0" max="500" value="500" class="price-slider">
+                            <span>500₽</span>
+                        </div>
+                        <div class="price-display">До: 500₽</div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <p class="filter-title">Оценка</p>
+                        <div class="rating-filter">
+                            <label class="rating-option">
+                                <input type="checkbox" name="rating" value="5">
+                                <span class="rating-stars">★★★★★</span> 5 звезд
+                            </label>
+                            <label class="rating-option">
+                                <input type="checkbox" name="rating" value="4">
+                                <span class="rating-stars">★★★★☆</span> 4+ звезды
+                            </label>
+                            <label class="rating-option">
+                                <input type="checkbox" name="rating" value="3">
+                                <span class="rating-stars">★★★☆☆</span> 3+ звезды
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <p class="filter-title">Размер</p>
+                        <div class="size-filter">
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="small">
+                                <span class="size-badge">S</span> Маленький
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="medium">
+                                <span class="size-badge">M</span> Средний
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="large">
+                                <span class="size-badge">L</span> Большой
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="apply-filters">Применить</button>
+                        <button class="reset-filters">Сбросить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+    <div class="product-item" data-price="200" data-rating="5">
+        <div class="product-card" style="background: url('11.jpg') no-repeat center center; background-size: cover;">
+            
+        </div>
+        <div class="product-info">
+            <a href="prodtea.html" class="product-name-link">
+                <p class="product-name">Зеленый чай</p>
+            </a>
+            <p class="product-description">Свежий и тонизирующий, с травяными нотками</p>
+            <p class="product-price">200₽</p>
+        </div>
+    </div>
+    
+    <div class="product-item" data-price="180" data-rating="4">
+        <div class="product-card" style="background: url('13.jpg') no-repeat center center; background-size: cover;">
+        
+        </div>
+        <div class="product-info">
+            <p class="product-name">Черный чай</p>
+            <p class="product-description">Классический насыщенный чай с терпким вкусом</p>
+            <p class="product-price">180₽</p>
+        </div>
+    </div>
+</div>
+    
+            </div>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="back-button">← Вернуться на главную</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Brewtiful. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

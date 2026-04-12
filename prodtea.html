@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зеленый чай - Brewtiful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand-name">Brewtiful</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li>
+                            <a class="catalog-dropdown-btn">Каталог </a>
+                            <div class="dropdown-menu">
+                                <a href="coffee.html">☕ Кофе</a>
+                                <a href="tea.html">🍵 Чай</a>
+                                <a href="desserts.html">🍰 Десерты</a>
+                            </div>
+                        </li>
+                        <li><a href="aboutus.html">О нас</a></li>
+                        <li><a href="index.html#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                <a href="favorites.html" class="favorites-btn">🤎</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-page">
+        <div class="container">
+            <div class="product-layout">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="11.jpg" alt="Зеленый чай" id="mainProductImage">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1 class="product-title">Зеленый чай</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                            <span class="rating-value">4.6</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">200 ₽</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>Нежный зеленый чай с травянистыми нотами и освежающим послевкусием. Идеален для утреннего пробуждения и вечерней релаксации.</p>
+                    </div>
+
+                    <div class="product-ingredients">
+                        <h2>Состав:</h2>
+                        <ul>
+                            <li>Листья зеленого чая</li>
+                            <li>Натуральные травы</li>
+                            <li>Цветки жасмина</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-size">
+                        <h2>Объем:</h2>
+                        <div class="size-options">
+                            <label class="size-option active" data-size="S" data-price="180">
+                                <input type="radio" name="size" value="S" checked>
+                                <span class="size-badge">S</span>
+                                <span class="size-info">250 мл</span>
+                                <span class="size-price">200 ₽</span>
+                            </label>
+                            <label class="size-option" data-size="M" data-price="250">
+                                <input type="radio" name="size" value="M">
+                                <span class="size-badge">M</span>
+                                <span class="size-info">300 мл</span>
+                                <span class="size-price">250 ₽</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="add-to-favorites-btn" id="addToFavorites">
+                            <span class="favorite-icon">♡</span>
+                            <span class="favorite-text">В избранное</span>
+                        </button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature">
+                            <span class="feature-icon">🌿</span>
+                            <span class="feature-text">Органический состав</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⚡</span>
+                            <span class="feature-text">Тонизирующий эффект</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🕒</span>
+                            <span class="feature-text">Завариваем за 3 минуты</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-details">
+                <div class="details-tabs">
+                    <button class="tab-btn active" data-tab="description">Описание</button>
+                    <button class="tab-btn" data-tab="nutrition">Польза</button>
+                    <button class="tab-btn" data-tab="reviews">Отзывы</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="description">
+                        <h3>О зеленом чае</h3>
+                        <p>Наш зеленый чай собирается на высокогорных плантациях Китая, где идеальные климатические условия создают неповторимый вкус и аромат. Каждый листок проходит минимальную обработку, что позволяет сохранить все природные полезные вещества.</p>
+                        <p>Чай заваривается при температуре 80°C, что раскрывает его нежный вкус без горечи. Идеальное время заваривания - 2-3 минуты для получения насыщенного, но не терпкого напитка.</p>
+                        <p>Мы предлагаем как чистый зеленый чай, так и с добавлением натурального жасмина для более цветочного аромата.</p>
+                    </div>
+
+                    <div class="tab-pane" id="nutrition">
+                        <h3>Польза для здоровья</h3>
+                        <table class="nutrition-table">
+                            <tr>
+                                <td>Антиоксиданты</td>
+                                <td>Высокое содержание</td>
+                            </tr>
+                            <tr>
+                                <td>Витамины</td>
+                                <td>C, B2, E, бета-каротин</td>
+                            </tr>
+                            <tr>
+                                <td>Минералы</td>
+                                <td>Кальций, магний, железо</td>
+                            </tr>
+                            <tr>
+                                <td>Кофеин</td>
+                                <td>Умеренное количество</td>
+                            </tr>
+                        </table>
+                        <div class="benefits-info">
+                            <h4>Полезные свойства:</h4>
+                            <ul>
+                                <li>Укрепление иммунной системы</li>
+                                <li>Улучшение метаболизма</li>
+                                <li>Антиоксидантное действие</li>
+                                <li>Снижение уровня стресса</li>
+                                <li>Улучшение концентрации</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="reviews">
+                        <h3>Отзывы покупателей</h3>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="review-author">Ольга</span>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Прекрасный зеленый чай! Не горчит, имеет нежный аромат. Пью каждое утро вместо кофе - заряд бодрости на весь день!</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="review-author">Дмитрий</span>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Очень качественный чай. Чувствуется, что листья свежие и правильно обработанные. Рекомендую любителям зеленого чая.</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="review-author">Светлана</span>
+                                <div class="review-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                            <p class="review-text">Пью этот чай уже месяц и заметила улучшение самочувствия. Кожа стала лучше, появилось больше энергии. Отличное качество!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-products">
+                <p class="section-title">Вам также может понравиться</p>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">🍵</div>
+                        <h3 class="product-name">Чай Улун</h3>
+                        <p class="product-description">Полуферментированный чай с цветочным ароматом</p>
+                        <p class="product-price">220₽</p>
+                        <a href="product-oolong.html" class="product-link">Подробнее</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🍵</div>
+                        <h3 class="product-name">Белый чай</h3>
+                        <p class="product-description">Нежный чай с тонким вкусом и ароматом</p>
+                        <p class="product-price">260₽</p>
+                        <a href="product-white-tea.html" class="product-link">Подробнее</a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🍵</div>
+                        <h3 class="product-name">Чай с мятой</h3>
+                        <p class="product-description">Освежающий напиток с натуральной мятой</p>
+                        <p class="product-price">190₽</p>
+                        <a href="product-mint-tea.html" class="product-link">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="tea.html" class="back-button">← Вернуться к каталогу чая</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Brewtiful. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="prod3.js"></script>
+</body>
+</html>
