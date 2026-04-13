@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return { success: true, message: 'Письмо (заглушка) успешно "отправлено"' };
     }
-
+    //
     async function submitFormToServer(formData) {
         try {
             const response = await fetch('http://45.131.214.123:7070/api/catalog/create', {
