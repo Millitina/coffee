@@ -61,22 +61,28 @@
 </div>
 
             <div class="filters-section">
-                <button class="filters-toggle">Фильтры</button>
-    <div class="filters-content">
-        <div class="filter-group">
-            <p class="filter-title">Цена</p>
-            <div class="price-range">
-                <div class="dual-range-slider">
-                    <div class="slider-track"></div>
-                    <input type="range" min="0" max="1000" value="0" class="range-slider range-min" id="minSlider">
-                    <input type="range" min="0" max="1000" value="500" class="range-slider range-max" id="maxSlider">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                    <button class="filters-toggle">Фильтры</button>
+                    <button class="add-product-btn" style="background: #6F4E37; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" 
+                            onmouseover="this.style.background='#5a3e2e'; this.style.transform='scale(1.02)'" 
+                            onmouseout="this.style.background='#6F4E37'; this.style.transform='scale(1)'"
+                            onclick="window.location.href='new.html'">Добавить товар</button>
                 </div>
-                <div class="price-values">
-                    <span class="min-value">0₽</span>
-                    <span class="max-value">500₽</span>
-                </div>
-            </div>
-        </div>
+                <div class="filters-content">
+                    <div class="filter-group">
+                        <p class="filter-title">Цена</p>
+                        <div class="price-range">
+                            <div class="dual-range-slider">
+                                <div class="slider-track"></div>
+                                <input type="range" min="0" max="1000" value="0" class="range-slider range-min" id="minSlider">
+                                <input type="range" min="0" max="1000" value="500" class="range-slider range-max" id="maxSlider">
+                            </div>
+                            <div class="price-values">
+                                <span class="min-value">0₽</span>
+                                <span class="max-value">500₽</span>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="filter-group">
                         <p class="filter-title">Оценка</p>
