@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function submitFormToServer(formData) {
         try {
-            const response = await fetch('http://localhost:3000/api/catalog/create', {
+            const response = await fetch('http://45.131.214.123:7070/api/catalog/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
